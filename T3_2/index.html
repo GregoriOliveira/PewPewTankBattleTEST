@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>T2</title>
+
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../html/resources/default.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <style>
+         /* Loading screen and button styling */
+         #loading-screen {
+             position: fixed;
+             width: 100%;
+             height: 100%;
+             background-color: rgba(0, 0, 0, 0.85);
+             z-index: 9999;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+ 
+         #loading-screen.fade-out {
+             transition: opacity 1s;
+             opacity: 0;
+         }
+ 
+         #myBtn {
+             padding: 15px 30px;
+             background-color: #007bff;
+             color: white;
+             border: none;
+             border-radius: 5px;
+             font-size: 18px;
+             cursor: pointer;
+         }
+     </style>
+
+   </head>
+
+   <body>
+      <!-- Import maps polyfill -- Remove this when import maps will be widely supported-->
+      <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>  
+      <script type="importmap"> 
+         {"imports": {"three": "../build/three.module.js"}} 
+      </script> 
+
+      <script src="../libs/other/nipplejs.js"></script>
+
+      <div id="loading-screen">
+         <button id="myBtn">Start Game</button>
+     </div>
+      <div id="webgl-output">     
+         <script type="module" src="main.js"></script>
+      </div>
+   </body>
+</html>
